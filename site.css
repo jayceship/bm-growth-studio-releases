@@ -1,0 +1,210 @@
+/*
+ * Public pages (privacy policy, data deletion). Dependency-free: system fonts only and
+ * no external requests. Same charcoal / ivory / bronze tokens as the app.
+ */
+:root {
+  --bg: #f6f3ec;
+  --surface: #fbf9f4;
+  --fg: #1e1e1c;
+  --muted: #5f5c55;
+  --border: #dcd6ca;
+  --accent: #8a6a3b;
+  --todo-bg: #f3e2b3;
+  --todo-fg: #4a3510;
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #141413;
+    --surface: #1b1b19;
+    --fg: #efeadf;
+    --muted: #a9a398;
+    --border: #2f2e2a;
+    --accent: #c2a26b;
+    --todo-bg: #5a4720;
+    --todo-fg: #fbefd3;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family:
+    "Pretendard Variable", Pretendard, "Malgun Gothic", "Apple SD Gothic Neo", system-ui,
+    -apple-system, "Segoe UI", sans-serif;
+  font-size: 15px;
+  line-height: 1.75;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+
+.page {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 56px 24px 96px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 40px;
+  color: var(--muted);
+  font-size: 13px;
+  letter-spacing: 0.02em;
+}
+
+.brand-mark {
+  display: inline-grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  background: var(--fg);
+  color: var(--bg);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  margin: 0 0 8px;
+  font-size: 28px;
+  line-height: 1.3;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+h2 {
+  margin: 44px 0 10px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  font-size: 18px;
+  line-height: 1.4;
+  font-weight: 650;
+}
+
+h3 {
+  margin: 24px 0 6px;
+  font-size: 15px;
+  font-weight: 650;
+}
+
+p,
+ul,
+ol,
+table {
+  margin: 0 0 14px;
+}
+
+ul,
+ol {
+  padding-left: 22px;
+}
+
+li + li {
+  margin-top: 4px;
+}
+
+a {
+  color: var(--accent);
+  text-underline-offset: 3px;
+}
+
+.lede {
+  color: var(--muted);
+}
+
+.meta {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.notice {
+  margin: 24px 0;
+  padding: 14px 16px;
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: 6px;
+  background: var(--surface);
+  font-size: 14px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+th,
+td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+  vertical-align: top;
+}
+
+th {
+  color: var(--muted);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+mark.todo {
+  padding: 1px 5px;
+  border-radius: 4px;
+  background: var(--todo-bg);
+  color: var(--todo-fg);
+  font-weight: 600;
+}
+
+.lang-switch {
+  display: flex;
+  gap: 16px;
+  margin: 0 0 8px;
+  font-size: 13px;
+}
+
+.links {
+  list-style: none;
+  padding: 0;
+}
+
+.links li {
+  margin: 0;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.links a {
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.links span {
+  display: block;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+section[lang="en"] {
+  margin-top: 72px;
+  padding-top: 8px;
+  border-top: 2px solid var(--fg);
+}
+
+footer {
+  margin-top: 64px;
+  color: var(--muted);
+  font-size: 13px;
+}
